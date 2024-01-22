@@ -6,10 +6,10 @@ import java.time.Instant;
 import java.util.List;
 
 @Data
-public class SpeechDto {
+public class Speech {
     private String id;
     private String content;
-    private AuthorDto author;
+    private Author author;
     private Instant dateGiven;
     private List<String> subjectAreas;
 }

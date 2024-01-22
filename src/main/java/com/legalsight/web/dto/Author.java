@@ -3,7 +3,7 @@ package com.legalsight.web.dto;
 import lombok.Data;
 
 @Data
-public class AuthorDto {
+public class Author {
     private String id;
     private String name;
 }

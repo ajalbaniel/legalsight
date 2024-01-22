@@ -21,10 +21,10 @@ build:
 	mvn clean package
 
 run:
-	java -jar target/spring-jpa-hibernate-0.0.1.jar
+	java -jar target/legal-sight-0.0.1.jar
 
 stop:
-	kill `cat spring-jpa-hibernate.pid`
+	kill `cat legal-sight.pid`
 
 request:
 	./request.sh

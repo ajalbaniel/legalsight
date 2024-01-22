@@ -23,7 +23,7 @@ public class App {
 
 	public static void main(String[] args) {
 		SpringApplication springApplication = new SpringApplication(App.class);
-		springApplication.addListeners(new ApplicationPidFileWriter("legalsight.pid"));
+		springApplication.addListeners(new ApplicationPidFileWriter("legal-sight.pid"));
 		springApplication.run(args);
 	}
 
