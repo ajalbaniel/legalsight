@@ -8,26 +8,31 @@ import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Table;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
+import org.hibernate.annotations.Where;
 
-import java.time.Instant;
 import java.time.LocalDate;
 import java.util.List;
 
 @Getter
 @Setter
+@ToString
+@RequiredArgsConstructor
+@EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = true)
 @Entity
 @Table(name = "speech")
+@Where(clause = "deleted = false")
 public class SpeechEntity extends BaseEntity {
     @Column(name = "content")
     private String content;
-
     @Embedded
     @AttributeOverride(name = "id", column = @Column(name = "author_id"))
     @AttributeOverride(name = "name", column = @Column(name = "author_name"))
     private AuthorEmbeddable author;
-
     @Column(name = "date_given")
     private LocalDate dateGiven;
     @ElementCollection

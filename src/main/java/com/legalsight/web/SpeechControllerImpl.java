@@ -1,38 +1,42 @@
 package com.legalsight.web;
 
+import com.legalsight.service.SpeechService;
 import com.legalsight.web.dto.Speech;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
 @AllArgsConstructor
 @RestController
 public class SpeechControllerImpl implements SpeechController {
+
+    private final SpeechService service;
+
     @Override
-    public ResponseEntity<Speech> create(RequestEntity<Speech> request) {
-        return null;
+    public ResponseEntity<Speech> create(Speech request) {
+        return ResponseEntity.ok(service.create(request));
     }
 
     @Override
-    public ResponseEntity<Speech> find(String id) {
-        return null;
+    public ResponseEntity<Speech> get(String id) {
+        return ResponseEntity.ok(service.get(id));
     }
 
     @Override
-    public ResponseEntity<Speech> update(String id, RequestEntity<Speech> request) {
-        return null;
+    public ResponseEntity<Speech> update(String id, Speech request) {
+        request.setId(id);
+        return ResponseEntity.ok(service.update(request));
     }
 
     @Override
     public void delete(String id) {
-
+        service.delete(id);
     }
 
     @Override
-    public ResponseEntity<Page<Speech>> list(Pageable pageable) {
-        return null;
+    public ResponseEntity<Page<Speech>> list(Speech filter, Pageable pageable) {
+        return ResponseEntity.ok(service.list(filter, pageable));
     }
 }

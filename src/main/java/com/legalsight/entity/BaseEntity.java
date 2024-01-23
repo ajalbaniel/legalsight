@@ -33,4 +33,6 @@ public class BaseEntity {
     @Version
     @Column(name = "version")
     protected Long version;
+    @Column(name = "deleted")
+    private boolean deleted;
 }
