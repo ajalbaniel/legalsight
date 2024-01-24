@@ -1,7 +1,18 @@
 # Speech API
 Java Technical Challenge by LegalSight
 
-[Postman collection](https://github.com/ajalbaniel/legalsight/blob/main/Java%20Technical%20Challenge.postman_collection.json) attached as project file
+Submitted by: AJ Albaniel / ajalbaniel@gmail.com
+
+## Setup
+
+To build and run the application
+```console
+foo@bar ~ % : cd legalsight
+foo@bar legalsight % : make all
+```
+_Note: App will connect to tidbcloud database_
+
+[Postman collection](https://github.com/ajalbaniel/legalsight/blob/main/Java%20Technical%20Challenge.postman_collection.json) attached as project file, which you can use immediately once the app is running.
 
 ## Documentation
 
