@@ -81,7 +81,7 @@ All parameters are optional
 | `sort` | `string` | Sorting |  `dateGiven,desc` |
 | `size` | `int` | Number of records per page |  `5` |
 | `subjectAreas` | `string` | Comma-separated. If any matches |  `dog, fox, turtle` |
-| `author` | `int` | Author |  `AJ Albaniel` |
+| `author` | `string` | Author |  `AJ Albaniel` |
 | `dateGivenFrom` | `date` | Can be used by itself, or alongside dateGivenTo |  `2005-11-24` |
 | `dateGivenTo` | `date` | Can be used by itself, or alongside dateGivenFrom |  `2005-11-25` |
 | `contentSnippet` | `string` | Snippets of text from the speech body |  `5` |
