@@ -21,10 +21,10 @@ build:
 	mvn clean package
 
 run:
-	java -jar target/legal-sight-0.0.1.jar
+	java -jar target/legalsight-0.0.1.jar
 
 stop:
-	kill `cat legal-sight.pid`
+	kill `cat legalsight.pid`
 
 request:
 	./request.sh
