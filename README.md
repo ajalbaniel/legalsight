@@ -52,7 +52,7 @@ DELETE /speeches/:id
 | Field | Type | Constraints | Example |
 | :--- | :--- | :--- | :--- |
 | `content` | `string` | Required | `The quick brown fox jumped over the lazy dog.` |
-| `author.name` | `string` | Required | `Alyssa Jane Villalon` |
+| `author.name` | `string` | Required | `AJ Albaniel` |
 | `dateGiven` | `date` | Required | `2005-11-26` |
 | `subjectAreas` | `string[]` |  | `["fox", "dog"]` |
 
@@ -80,8 +80,8 @@ All parameters are optional
 | `page` | `int` | Page number  |  `0` |
 | `sort` | `string` | Sorting |  `dateGiven,desc` |
 | `size` | `int` | Number of records per page |  `5` |
-| `subjectAreas` | `string` | Comma-separated. If any matches |  `dog, fox, turtle` |
+| `subjectAreas` | `string` | Comma-separated. If any matches |  `dog, fox` |
 | `author` | `string` | Author |  `AJ Albaniel` |
 | `dateGivenFrom` | `date` | Can be used by itself, or alongside dateGivenTo |  `2005-11-24` |
-| `dateGivenTo` | `date` | Can be used by itself, or alongside dateGivenFrom |  `2005-11-25` |
-| `contentSnippet` | `string` | Snippets of text from the speech body |  `5` |
+| `dateGivenTo` | `date` | Can be used by itself, or alongside dateGivenFrom |  `2005-11-28` |
+| `contentSnippet` | `string` | Snippets of text from the speech body |  `jumped over` |
