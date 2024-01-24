@@ -8,12 +8,14 @@ public class LegalSightException extends RuntimeException {
 
     @Getter
     private final String uuid;
-    @Getter
-    private final transient Object object;
 
     public LegalSightException(String message) {
         super(message);
         this.uuid = UUID.randomUUID().toString();
-        this.object = null;
+    }
+
+    public LegalSightException(String message, Throwable cause) {
+        super(message, cause);
+        this.uuid = UUID.randomUUID().toString();
     }
 }

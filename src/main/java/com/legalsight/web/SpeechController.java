@@ -1,6 +1,8 @@
 package com.legalsight.web;
 
 import com.legalsight.web.dto.Speech;
+import com.legalsight.web.dto.SpeechFilter;
+import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -21,20 +23,21 @@ public interface SpeechController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    ResponseEntity<Speech> create(@RequestBody final Speech request);
+    ResponseEntity<Speech> create(@Valid @RequestBody Speech request);
 
     @GetMapping("/{id}")
-    ResponseEntity<Speech> get(@PathVariable("id") final String id);
+    ResponseEntity<Speech> get(@PathVariable("id") String id);
 
     @PutMapping("/{id}")
-    ResponseEntity<Speech> update(@PathVariable("id") final String id, @RequestBody final Speech request);
+    ResponseEntity<Speech> update(@PathVariable("id") String id, @Valid @RequestBody Speech request);
 
     @DeleteMapping("/{id}")
-    void delete(@PathVariable("id") final String id);
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    void delete(@PathVariable("id") String id);
 
     @GetMapping
     ResponseEntity<Page<Speech>> list(
-            Speech filter,
+            SpeechFilter filter,
             @PageableDefault(size = 10, sort = {"createTime"}, direction = Sort.Direction.DESC) Pageable pageable
     );
 }

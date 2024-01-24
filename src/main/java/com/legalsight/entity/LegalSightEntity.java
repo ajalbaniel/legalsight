@@ -17,7 +17,7 @@ import java.time.Instant;
 @MappedSuperclass
 @EqualsAndHashCode
 @Data
-public class BaseEntity {
+public class LegalSightEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "id", nullable = false)

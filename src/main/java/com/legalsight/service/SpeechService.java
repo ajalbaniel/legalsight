@@ -1,6 +1,7 @@
 package com.legalsight.service;
 
 import com.legalsight.web.dto.Speech;
+import com.legalsight.web.dto.SpeechFilter;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -14,6 +15,6 @@ public interface SpeechService {
 
     void delete(String id);
 
-    Page<Speech> list(Speech filter, Pageable pageable);
+    Page<Speech> list(SpeechFilter filter, Pageable pageable);
 
 }

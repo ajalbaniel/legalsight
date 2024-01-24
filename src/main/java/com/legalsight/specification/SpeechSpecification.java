@@ -1,9 +1,9 @@
 package com.legalsight.specification;
 
-import com.legalsight.entity.BaseEntity_;
+import com.legalsight.entity.AuthorEmbeddable_;
 import com.legalsight.entity.SpeechEntity;
 import com.legalsight.entity.SpeechEntity_;
-import com.legalsight.web.dto.Speech;
+import com.legalsight.web.dto.SpeechFilter;
 import io.micrometer.common.util.StringUtils;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
@@ -20,7 +20,7 @@ import java.util.List;
 @AllArgsConstructor
 public class SpeechSpecification implements Specification<SpeechEntity> {
 
-    private final transient Speech filter;
+    private final transient SpeechFilter filter;
     @Getter
     private final List<Predicate> predicates = new ArrayList<>();
 
@@ -33,21 +33,20 @@ public class SpeechSpecification implements Specification<SpeechEntity> {
     }
 
     private void addAuthorPredicate(Root<SpeechEntity> root, CriteriaBuilder builder) {
-        if (filter.getAuthor() != null &&
-                StringUtils.isNotBlank(filter.getAuthor().getName())) {
+        if (StringUtils.isNotBlank(filter.getAuthor())) {
             predicates.add(
                     builder.equal(
-                            root.get(SpeechEntity_.AUTHOR).get(BaseEntity_.ID),
-                            filter.getAuthor().getName()
+                            root.get(SpeechEntity_.AUTHOR).get(AuthorEmbeddable_.NAME),
+                            filter.getAuthor()
                     )
             );
         }
     }
 
     private void addSubjectAreasPredicate(Root<SpeechEntity> root) {
-        if (filter.getSubjectAreas() != null && !filter.getSubjectAreas().isEmpty()) {
-            Join<SpeechEntity, String> joinTags = root.join(SpeechEntity_.SUBJECT_AREAS);
-            predicates.add(joinTags.in(filter.getSubjectAreas()));
+        if (filter.getSubjectAreas() != null) {
+            Join<SpeechEntity, String> joinSubjectAreas = root.join(SpeechEntity_.SUBJECT_AREAS);
+            predicates.add(joinSubjectAreas.in(filter.getSubjectAreas()));
         }
     }
 }

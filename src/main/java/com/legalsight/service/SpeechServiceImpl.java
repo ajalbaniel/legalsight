@@ -5,6 +5,7 @@ import com.legalsight.mapper.SpeechMapper;
 import com.legalsight.repository.SpeechRepository;
 import com.legalsight.specification.SpeechSpecification;
 import com.legalsight.web.dto.Speech;
+import com.legalsight.web.dto.SpeechFilter;
 import com.legalsight.web.exception.SpeechNotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -56,7 +57,7 @@ public class SpeechServiceImpl implements SpeechService {
     }
 
     @Override
-    public Page<Speech> list(Speech filter, Pageable pageable) {
+    public Page<Speech> list(SpeechFilter filter, Pageable pageable) {
         SpeechSpecification specification = new SpeechSpecification(filter);
         return repository.findAll(specification, pageable).map(mapper::toSearchResult);
     }

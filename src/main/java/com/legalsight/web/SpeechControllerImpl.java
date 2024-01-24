@@ -2,6 +2,7 @@ package com.legalsight.web;
 
 import com.legalsight.service.SpeechService;
 import com.legalsight.web.dto.Speech;
+import com.legalsight.web.dto.SpeechFilter;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -36,7 +37,7 @@ public class SpeechControllerImpl implements SpeechController {
     }
 
     @Override
-    public ResponseEntity<Page<Speech>> list(Speech filter, Pageable pageable) {
+    public ResponseEntity<Page<Speech>> list(SpeechFilter filter, Pageable pageable) {
         return ResponseEntity.ok(service.list(filter, pageable));
     }
 }

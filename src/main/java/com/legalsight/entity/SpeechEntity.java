@@ -26,8 +26,8 @@ import java.util.List;
 @Entity
 @Table(name = "speech")
 @Where(clause = "deleted = false")
-public class SpeechEntity extends BaseEntity {
-    @Column(name = "content")
+public class SpeechEntity extends LegalSightEntity {
+    @Column(name = "content", length = Integer.MAX_VALUE)
     private String content;
     @Embedded
     @AttributeOverride(name = "id", column = @Column(name = "author_id"))
