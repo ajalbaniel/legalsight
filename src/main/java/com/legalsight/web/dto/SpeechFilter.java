@@ -7,8 +7,9 @@ import java.util.List;
 
 @Data
 public class SpeechFilter {
-    private String content;
+    private String contentSnippet;
     private String author;
-    private LocalDate dateGivenRange;
+    private LocalDate dateGivenFrom;
+    private LocalDate dateGivenTo;
     private List<String> subjectAreas;
 }
