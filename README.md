@@ -10,15 +10,22 @@ To build and run the application
 foo@bar ~ % : cd legalsight
 foo@bar legalsight % : make all
 ```
-_Note: App will connect to tidbcloud database_
+> [!NOTE]
+> App will connect to tidbcloud database
 
 [Postman collection](https://github.com/ajalbaniel/legalsight/blob/main/Java%20Technical%20Challenge.postman_collection.json) attached as project file, which you can use immediately once the app is running.
 
-## Documentation
+<details>
+    <br/>
+    <p><i>Example requests are provided in the postman collection</i></p>
+    <img width="379" alt="image" src="https://github.com/ajalbaniel/legalsight/assets/3489342/7a7f94d8-e6c0-4b5f-9ff6-9b1a7ea1ff80">
+</details>
+
+## API Documentation
 
 **Endpoints URLs**
 
-List speeches (with Search and pagination)
+List speeches (with search and pagination)
 ```http
 GET /speeches
 ```
